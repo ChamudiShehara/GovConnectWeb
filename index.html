@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GovConnect — AI-Powered Citizen Complaint Management</title>
+  <meta name="description" content="GovConnect automates government-citizen complaint management using AI-driven classification to route complaints to the right department.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="particles-canvas"></canvas>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="logo">
+      <span class="logo-icon">GC</span>
+      GovConnect
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#milestones">Milestones</a></li>
+      <li><a href="#documents">Documents</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#submit">Submit Complaint</a></li>
+      <li><a href="#dashboards">Dashboards</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="tag"><span class="dot"></span> AI-POWERED GOVERNANCE · 2026</div>
+    <h1>Smarter Complaints.<br><span class="highlight">Better Governance.</span></h1>
+    <p>An AI-driven platform that automatically classifies and routes citizen complaints to the right government department — making public service faster, transparent, and accountable.</p>
+    <div class="hero-buttons">
+      <a href="#submit" class="btn btn-primary">✦ Submit a Complaint</a>
+      <a href="#about" class="btn btn-outline">Learn More →</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS --
+<section class="section" id="stats">
+  <div class="section-inner">
+    <div class="stats-row">
+      <div class="stat-card animate-in"><div class="stat-number">200</div><div class="stat-label">Complaints Resolved</div></div>
+      <div class="stat-card animate-in"><div class="stat-number">87.2%</div><div class="stat-label">AI Classification Accuracy</div></div>
+      <div class="stat-card animate-in"><div class="stat-number">7/div><div class="stat-label">Government Departments</div></div>
+  
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="section-badge">About GovConnect</span>
+        <h2 class="section-title">Automating Government–Citizen Complaint Management</h2>
+        <p>GovConnect is a research-driven web application designed to bridge the communication gap between citizens and government. Citizens submit complaints through the platform, which are then <strong>automatically classified</strong> to the relevant government department using a fine-tuned Ollama LLaMA 3 model and a RAG pipeline that retrieves and categorizes department data.</p>
+        <p>Once posted to the department, complaints are <strong>prioritized by urgency</strong> using a RandomForestRegressor ML model that considers citizen votes, officer perspectives (High / Medium / Low), and keyword analysis. The department minister reviews and assigns agents who update complaint statuses through to resolution.</p>
+        <ul class="about-list">
+          <li><span class="check">✓</span> AI-driven department classification via RAG + LLaMA 3 (Ollama)</li>
+          <li><span class="check">✓</span> ML-based urgency scoring using RandomForestRegressor</li>
+          <li><span class="check">✓</span> Citizen voting & officer priority input (High / Medium / Low)</li>
+          <li><span class="check">✓</span> Minister dashboard with agent assignment workflow</li>
+          <li><span class="check">✓</span> Full MERN stack + Vite + TailwindCSS v4 architecture</li>
+        </ul>
+      </div>
+      <div class="about-image">
+        <div style="width:100%;aspect-ratio:4/3;background:linear-gradient(135deg,rgba(212,168,67,0.08),rgba(129,140,248,0.08));border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:2rem;">
+          <div style="font-size:4rem;">🏛️</div>
+          <div style="font-family:var(--font-heading);font-size:1.3rem;color:var(--cyan);letter-spacing:1px;font-weight:700;">GOVCONNECT</div>
+          <div style="font-size:0.85rem;color:var(--text-secondary);text-align:center;">AI-Powered Complaint<br>Management System</div>
+          <div style="display:flex;gap:0.5rem;margin-top:0.5rem;flex-wrap:wrap;justify-content:center;">
+            <span class="badge badge-progress">React + Vite</span>
+            <span class="badge badge-pending">Node.js</span>
+            <span class="badge badge-resolved">MongoDB</span>
+            <span class="badge badge-urgent">Python ML</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESEARCH COMPONENTS -->
+    <div style="margin-top:5rem;text-align:center;">
+      <div class="team-section-label">— Research Components —</div>
+      <div class="features-grid" style="max-width:800px;margin:0 auto;">
+        <div class="feature-card animate-in">
+          <div class="feature-icon">🧠</div>
+          <h3>Component 1 — Department Classification</h3>
+          <p>Automatically detects the relevant government department for each citizen complaint using a <strong>fine-tuned Ollama LLaMA 3</strong> model. The <strong>RAG pipeline</strong> retrieves government department data, cleans and categorizes it, and performs semantic matching to route complaints accurately.</p>
+          <div style="margin-top:1rem;display:flex;gap:0.4rem;flex-wrap:wrap;">
+            <span class="badge badge-progress">Ollama LLaMA 3</span>
+            <span class="badge badge-progress">RAG Pipeline</span>
+            <span class="badge badge-progress">JavaScript</span>
+          </div>
+        </div>
+        <div class="feature-card animate-in">
+          <div class="feature-icon">📊</div>
+          <h3>Component 2 — Urgency Prioritization</h3>
+          <p>Prioritizes complaints using a <strong>RandomForestRegressor</strong> ML model. Considers <strong>citizen votes</strong>, <strong>officer priority perspective</strong> (High / Medium / Low), and <strong>keyword analysis</strong> to produce an urgency score. The model is trained on a labeled dataset to predict complaint priority.</p>
+          <div style="margin-top:1rem;display:flex;gap:0.4rem;flex-wrap:wrap;">
+            <span class="badge badge-pending">RandomForestRegressor</span>
+            <span class="badge badge-pending">scikit-learn</span>
+            <span class="badge badge-pending">Python</span>
+            <span class="badge badge-pending">Pandas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TECHNOLOGY STACK -->
+    <div style="margin-top:4rem;text-align:center;">
+      <div class="team-section-label">— Technology Stack —</div>
+      <div class="pipeline-grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));max-width:1000px;margin:0 auto;">
+        <div class="pipeline-step animate-in">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">⚛️</div>
+          <h3>Frontend</h3>
+          <p>React.js · Vite · TailwindCSS v4 · Responsive SPA</p>
+        </div>
+        <div class="pipeline-step animate-in">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">🖥️</div>
+          <h3>Backend</h3>
+          <p>Node.js · Express.js · REST API · JWT Auth</p>
+        </div>
+        <div class="pipeline-step animate-in">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">🗄️</div>
+          <h3>Database</h3>
+          <p>MongoDB · Mongoose ODM · Relational Modeling</p>
+        </div>
+        <div class="pipeline-step animate-in">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">🤖</div>
+          <h3>AI / ML</h3>
+          <p>Ollama LLaMA 3 · RAG · LangChain · RandomForestRegressor · scikit-learn · Python</p>
+        </div>
+      </div>
+    </div>
+
+<!-- SUPERVISORS -->
+<div style="margin-top:5rem;">
+  <div class="team-section-label">— Supervisors —</div>
+
+  <div class="team-grid" style="max-width:600px;margin:0 auto;">
+
+    <!-- Supervisor 1 -->
+    <div class="team-card supervisor-card animate-in">
+      <div class="team-avatar">
+        <img src="images/01.jpeg" alt="Ms. Buddhima Aththanayake">
+      </div>
+      <div class="team-name">Ms. Buddhima Aththanayake</div>
+      <div class="team-role">Supervisor</div>
+      <div class="team-desc">
+        Lecturer, Department of Computer Systems Engineering.
+      </div>
+    </div>
+
+    <!-- Supervisor 2 -->
+    <div class="team-card supervisor-card animate-in">
+      <div class="team-avatar">
+        <img src="images/02.jpeg" alt="Ms. Narmadha Gamage">
+      </div>
+      <div class="team-name">Ms. Narmadha Gamage</div>
+      <div class="team-role">Co-Supervisor</div>
+      <div class="team-desc">
+        Lecturer, Department of Computer Systems Engineering.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- OUR TEAM -->
+<div style="margin-top:3rem;">
+  <div class="team-section-label">— Our Team —</div>
+
+  <div class="team-grid" style="max-width:600px;margin:0 auto;">
+
+    <!-- Member 1 -->
+    <div class="team-card animate-in">
+      <div class="team-avatar">
+        <img src="images/03.jpeg" alt="Shehara D.M.C">
+      </div>
+
+      <div class="team-name">Shehara D.M.C</div>
+      <div class="team-role">Component 1 — Classification</div>
+
+      <div class="team-desc">
+        Responsible for developing the AI-driven department classification system using RAG pipeline and fine-tuned Ollama LLaMA 3 model for semantic complaint routing.
+      </div>
+
+      <div style="margin-bottom:0.75rem;">
+        <span class="badge badge-progress" style="font-size:0.68rem;">RAG + LLaMA 3</span>
+        <span class="badge badge-progress" style="font-size:0.68rem;">LangChain</span>
+      </div>
+    </div>
+
+    <!-- Member 2 -->
+    <div class="team-card animate-in">
+      <div class="team-avatar">
+        <img src="images/04.jpeg" alt="Premalal W.M.B.S">
+      </div>
+
+      <div class="team-name">Premalal W.M.B.S</div>
+      <div class="team-role">Component 2 — Urgency Scoring</div>
+
+      <div class="team-desc">
+        Develops the ML-based urgency prioritization model using RandomForestRegressor, incorporating citizen votes, officer perspectives, and keyword-based priority analysis.
+      </div>
+
+      <div style="margin-bottom:0.75rem;">
+        <span class="badge badge-pending" style="font-size:0.68rem;">RandomForest</span>
+        <span class="badge badge-pending" style="font-size:0.68rem;">scikit-learn</span>
+        <span class="badge badge-pending" style="font-size:0.68rem;">Python</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- FEATURES -->
+<section class="section" id="features" style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section-inner" style="text-align:center;">
+    <span class="section-badge">Core Features</span>
+    <h2 class="section-title" style="text-align:center;">Platform Capabilities</h2>
+    <p class="section-subtitle center">A comprehensive suite of tools designed to transform how government handles citizen complaints.</p>
+    <div class="features-grid">
+      <div class="feature-card animate-in">
+        <div class="feature-icon">🤖</div>
+        <h3>AI Classification</h3>
+        <p>RAG retrieves department data and suggests the relevant department using semantic matching. LLaMA 3 handles ambiguous cases as a fallback.</p>
+      </div>
+      <div class="feature-card animate-in">
+        <div class="feature-icon">📋</div>
+        <h3>Easy Submission</h3>
+        <p>Citizens can submit complaints through an intuitive form with auto-suggested department routing powered by AI.</p>
+      </div>
+      <div class="feature-card animate-in">
+        <div class="feature-icon">📊</div>
+        <h3>Minister Dashboard</h3>
+        <p>Ministers can view department complaints, track statuses, and assign agents for resolution — all in real time.</p>
+      </div>
+      <div class="feature-card animate-in">
+        <div class="feature-icon">👤</div>
+        <h3>Agent Workflow</h3>
+        <p>Agents receive assigned complaints, update statuses, and mark resolutions with urgency-based prioritization.</p>
+      </div>
+      <div class="feature-card animate-in">
+        <div class="feature-icon">📱</div>
+        <h3>Fully Responsive</h3>
+        <p>Optimized for desktop, tablet, and mobile — ensuring every citizen can access government services from any device.</p>
+      </div>
+      <div class="feature-card animate-in">
+        <div class="feature-icon">🔒</div>
+        <h3>Secure & Scalable</h3>
+        <p>Built on the MERN stack with role-based access control, JWT authentication, and industry-standard security practices.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MILESTONES -->
+<section class="section" id="milestones">
+  <div class="section-inner" style="text-align:center;">
+    <span class="section-badge">Project Timeline</span>
+    <h2 class="section-title" style="text-align:center;">Milestones</h2>
+    <p class="section-subtitle center">Key phases and deliverables in the GovConnect development lifecycle.</p>
+    <div class="timeline">
+      <div class="timeline-item completed">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">FEBRUARY 2025</div>
+          <h3>Project Proposal</h3>
+          <p>Defined the project scope, objectives, and deliverables. Submitted the Topic Assessment Form and received approval from the evaluation panel.</p>
+          <div class="timeline-status"><span class="badge badge-resolved">✅ COMPLETED</span></div>
+        </div>
+      </div>
+      <div class="timeline-item completed">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">MARCH 2025</div>
+          <h3>Literature Review & Research</h3>
+          <p>Conducted in-depth literature review on AI-driven complaint classification, RAG systems, LLaMA 3 capabilities, and MERN stack best practices.</p>
+          <div class="timeline-status"><span class="badge badge-resolved">✅ COMPLETED</span></div>
+        </div>
+      </div>
+      <div class="timeline-item completed">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">January 05, 2026<iv>
+          <h3>Progress Presentation I</h3>
+          <p>Demonstrated initial system architecture, database schema design, REST API development, and the complaint submission workflow prototype.</p>
+          <div class="timeline-status"><span class="badge badge-resolved">✅ COMPLETED</span></div>
+        </div>
+      </div>
+      <div class="timeline-item completed">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">March 11, 2026</div>
+          <h3>Progress Presentation II</h3>
+          <p>Implementing AI classification pipeline with RAG + LLaMA 3 integration, Minister & Agent dashboards, and real-time complaint tracking.</p>
+          <div class="timeline-status"><span class="badge badge-resolved">✅ COMPLETED</span></div>
+        </div>
+      </div>
+       <div class="timeline-item upcoming">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">AUGUST 2025</div>
+          <h3>Final Presentation & Viva</h3>
+          <p>Present the completed GovConnect platform to the evaluation panel. Demonstrate full pipeline — from citizen submission through AI routing to resolution.</p>
+          <div class="timeline-status"><span class="badge badge-urgent">⏳ UPCOMING</span></div>
+        </div>
+      </div>
+    </div>
+      <div class="timeline-item upcoming">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">JULY 2025</div>
+          <h3>Final Report & Research Paper</h3>
+          <p>Complete system testing, compile final report documentation, and prepare IEEE-format research paper for submission.</p>
+          <div class="timeline-status"><span class="badge badge-urgent">⏳ UPCOMING</span></div>
+        </div>
+      </div>
+     
+  </div>
+</section>
+
+<!-- DOCUMENTS -->
+<section class="section" id="documents" style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <span class="section-badge">Research Artifacts</span>
+      <h2 class="section-title" style="text-align:center;">Documents</h2>
+      <p class="section-subtitle center">All project documentation, proposals, and checklists for the GovConnect research project.</p>
+    </div>
+
+    <!-- TAF Document -->
+    <div class="doc-group">
+      <div class="doc-group-header">
+        <div class="doc-group-icon">📄</div>
+        <div>
+          <div class="doc-group-title">TAF Document</div>
+          <div class="doc-group-count">1 Document</div>
+        </div>
+      </div>
+      <div class="doc-row">
+        <div class="doc-number">01</div>
+        <div class="doc-info">
+          <div class="doc-title">TAF Document</div>
+          <div class="doc-subtitle">Topic Assessment Form for Research Project</div>
+        </div>
+        <div class="doc-actions">
+          <span class="doc-status available">Available</span>
+          <a href="#" class="doc-view-btn">View →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proposal Documents -->
+    <div class="doc-group">
+      <div class="doc-group-header">
+        <div class="doc-group-icon">📋</div>
+        <div>
+          <div class="doc-group-title">Proposal Documents</div>
+          <div class="doc-group-count">2 Documents</div>
+        </div>
+      </div>
+      <div class="doc-row">
+        <div class="doc-number">01</div>
+        <div class="doc-info">
+          <div class="doc-title">Component 01 Proposal Document — Shehara D.M.C</div>
+          <div class="doc-subtitle">Complaint Classification using RAG + Ollama LLaMA 3</div>
+        </div>
+        <div class="doc-actions">
+          <span class="doc-status available">Available</span>
+          <a href="#" class="doc-view-btn">View →</a>
+        </div>
+      </div>
+      <div class="doc-row">
+        <div class="doc-number">02</div>
+        <div class="doc-info">
+          <div class="doc-title">Component 02 Proposal Document — W.M.B.S. Premalal</div>
+          <div class="doc-subtitle">Prioritisation and Voting in Complaints using ML</div>
+        </div>
+        <div class="doc-actions">
+          <span class="doc-status available">Available</span>
+          <a href="#" class="doc-view-btn">View →</a>
+        </div>
+      </div>
+    </div>
+
+   <!-- Checklist Documents -->
+<div class="doc-group">
+  <div class="doc-group-header">
+    <div class="doc-group-icon">✅</div>
+    <div>
+      <div class="doc-group-title">Checklist Documents</div>
+      <div class="doc-group-count">4 Documents</div>
+    </div>
+  </div>
+
+  <!-- Row 01 -->
+  <div class="doc-row">
+    <div class="doc-number">01</div>
+    <div class="doc-info">
+      <div class="doc-title">Progress Checklist — Checklist 01</div>
+      <div class="doc-subtitle">Gov connect business model canvas</div>
+    </div>
+    <div class="doc-actions">
+      <span class="doc-status available">Available</span>
+      <a href="#" class="doc-view-btn">View →</a>
+    </div>
+  </div>
+
+  <!-- Row 02 -->
+  <div class="doc-row">
+    <div class="doc-number">02</div>
+    <div class="doc-info">
+      <div class="doc-title">Progress Checklist — Checklist 02</div>
+      <div class="doc-subtitle">SRS Document for GovConnect</div>
+    </div>
+    <div class="doc-actions">
+      <span class="doc-status pending">Pending</span>
+      <a href="#" class="doc-view-btn">View →</a>
+    </div>
+  </div>
+
+  <!-- Row 03 -->
+  <div class="doc-row">
+    <div class="doc-number">03</div>
+    <div class="doc-info">
+      <div class="doc-title">Progress Checklist — Checklist 03</div>
+      <div class="doc-subtitle">Project Management tool report</div>
+    </div>
+    <div class="doc-actions">
+      <span class="doc-status pending">Pending</span>
+      <a href="#" class="doc-view-btn">View →</a>
+    </div>
+  </div>
+
+  <!-- Row 04 -->
+  <div class="doc-row">
+    <div class="doc-number">04</div>
+    <div class="doc-info">
+      <div class="doc-title">Progress Checklist — Checklist 04</div>
+      <div class="doc-subtitle">User acceptance testing report</div>
+    </div>
+    <div class="doc-actions">
+      <span class="doc-status pending">Pending</span>
+      <a href="#" class="doc-view-btn">View →</a>
+    </div>
+  </div>
+</div>
+<!-- Final Reports -->
+<div class="doc-group">
+  <div class="doc-group-header">
+    <div class="doc-group-icon">📄</div>
+    <div>
+      <div class="doc-group-title">Final Reports</div>
+      <div class="doc-group-count">3 Documents</div>
+    </div>
+  </div>
+
+  <!-- Component 01 -->
+  <div class="doc-row">
+    <div class="doc-number">01</div>
+    <div class="doc-info">
+      <div class="doc-title">Component 01 Final Report - Shehara D.M.C</div>
+      <div class="doc-subtitle">
+        AI-Driven Complaint Classification using RAG + Ollama LLaMA 3
+      </div>
+    </div>
+    <div class="doc-actions">
+      <span class="doc-status pending">Pending</span>
+      <a href="#" class="doc-view-btn">View →</a>
+    </div>
+  </div>
+
+  <!-- Component 02 -->
+  <div class="doc-row">
+    <div class="doc-number">02</div>
+    <div class="doc-info">
+      <div class="doc-title">Component 02 Final Report - Premalal W.M.B.S</div>
+      <div class="doc-subtitle">
+        ML-Based Complaint Prioritization using RandomForestRegressor
+      </div>
+    </div>
+    <div class="doc-actions">
+      <span class="doc-status pending">Pending</span>
+      <a href="#" class="doc-view-btn">View →</a>
+    </div>
+  </div>
+  
+   <div class="doc-row">
+    <div class="doc-number">03</div>
+    <div class="doc-info">
+      <div class="doc-title">Group Final Report</div>
+      <div class="doc-subtitle">
+        Comprehensive documentation of the GovConnect project, including system architecture, implementation details, testing results, and future work.
+      </div>
+    </div>
+    <div class="doc-actions">
+      <span class="doc-status pending">Pending</span>
+      <a href="#" class="doc-view-btn">View →</a>
+    </div>
+  </div>
+</div>
+
+<!-- Research Paper -->
+<div class="doc-group">
+  <div class="doc-group-header">
+    <div class="doc-group-icon">📑</div>
+    <div>
+      <div class="doc-group-title">Research Paper</div>
+      <div class="doc-group-count">1 Document</div>
+    </div>
+  </div>
+
+  <div class="doc-row">
+    <div class="doc-number">01</div>
+    
+    <div class="doc-info">
+      <div class="doc-title">Research Paper — IEEE Format</div>
+      <div class="doc-subtitle">
+        A SMART AI FRAMEWORK FOR AUTOMATED CIVIL COMPLAINT MANAGEMENT AND CITIZEN ENGAGEMENT IN SRI LANKA
+      </div>
+    </div>
+
+    <div class="doc-actions">
+      <span class="doc-status pending">Pending</span>
+      <a href="#" class="doc-view-btn">View →</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== PRESENTATIONS SECTION ===== -->
+<section class="presentations-section section">
+
+  <div class="section-header">
+    
+    <div>
+      <div class="section-subtitle">Presentations</div>
+      <h2 class="section-title">Presentation Slides</h2>
+    </div>
+  </div>
+
+  <div class="presentation-grid">
+
+    <!-- Card 01 -->
+    <div class="presentation-card">
+      <div class="presentation-number">01</div>
+      <div class="presentation-content">
+        <h3>Proposal Presentation</h3>
+        <p>
+          Research scope, problem formulation, proposed architecture overview,
+          literature review summary
+        </p>
+        <span class="status available">Available</span>
+      </div>
+      <a href="#" class="presentation-link">↗</a>
+    </div>
+
+    <!-- Card 02 -->
+    <div class="presentation-card">
+      <div class="presentation-number">02</div>
+      <div class="presentation-content">
+        <h3>Progress Presentation I</h3>
+        <p>
+          Component 1 demo - gov connect architecture, database schema, REST API endpoints, complaint submission workflow prototype
+        </p>
+        <span class="status available">Available</span>
+      </div>
+      <a href="#" class="presentation-link">↗</a>
+    </div>
+
+    <!-- Card 03 -->
+    <div class="presentation-card">
+      <div class="presentation-number">03</div>
+      <div class="presentation-content">
+        <h3>Progress Presentation II</h3>
+        <p>
+         component 2 demo - AI classification pipeline with RAG + LLaMA 3 integration, Minister & Agent dashboards, real-time complaint tracking
+        </p>
+        <span class="status available">Available</span>
+      </div>
+      <a href="#" class="presentation-link">↗</a>
+    </div>
+
+    <!-- Card 04 -->
+    <div class="presentation-card disabled">
+      <div class="presentation-number">04</div>
+      <div class="presentation-content">
+        <h3>Final Presentation</h3>
+        <p>
+          Full system demo of the completed GovConnect platform, showcasing the end-to-end complaint management workflow from citizen submission through AI routing to resolution.
+        </p>
+        <span class="status pending">Pending</span>
+      </div>
+      <a class="presentation-link disabled">—</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="section-inner" style="text-align:center;">
+    <span class="section-badge">How It Works</span>
+    <h2 class="section-title" style="text-align:center;">Complaint Resolution Pipeline</h2>
+    <p class="section-subtitle center">From submission to resolution — an AI-augmented workflow that ensures every complaint is handled efficiently.</p>
+    <div class="pipeline-grid">
+      <div class="pipeline-step animate-in">
+        <div class="step-number">01</div>
+        <h3>Citizen Submits</h3>
+        <p>A citizen fills out the complaint form with title, description, and optional department preference.</p>
+      </div>
+      <div class="pipeline-step animate-in">
+        <div class="step-number">02</div>
+        <h3>AI Classifies</h3>
+        <p>RAG + LLaMA 3 analyze the complaint text and automatically route it to the correct government department.</p>
+      </div>
+      <div class="pipeline-step animate-in">
+        <div class="step-number">03</div>
+        <h3>Minister Reviews</h3>
+        <p>The department minister reviews incoming complaints and assigns agents for investigation and resolution.</p>
+      </div>
+      <div class="pipeline-step animate-in">
+        <div class="step-number">04</div>
+        <h3>Agent Resolves</h3>
+        <p>Assigned agents work on complaints, update statuses, and mark them resolved — with full audit trail.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUBMIT COMPLAINT -->
+<section class="section form-section" id="submit">
+  <div class="section-inner" style="text-align:center;">
+    <span class="section-badge">Submit Complaint</span>
+    <h2 class="section-title" style="text-align:center;">Report an Issue</h2>
+    <p class="section-subtitle center">Fill out the form below to submit your complaint. Our AI system will automatically route it to the appropriate department.</p>
+    <div class="form-wrapper">
+      <form id="complaintForm" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label for="fullName">Full Name <span class="required">*</span></label>
+          <input type="text" id="fullName" class="form-control" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address <span class="required">*</span></label>
+          <input type="email" id="email" class="form-control" placeholder="you@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="complaintTitle">Complaint Title <span class="required">*</span></label>
+          <input type="text" id="complaintTitle" class="form-control" placeholder="Brief title for your complaint" required>
+        </div>
+        <div class="form-group">
+          <label for="complaintDesc">Complaint Description <span class="required">*</span></label>
+          <textarea id="complaintDesc" class="form-control" placeholder="Provide detailed information about your complaint..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="department">Department</label>
+          <select id="department" class="form-control">
+            <option value="">-- AI will auto-suggest --</option>
+            <option value="roads">Roads & Infrastructure</option>
+            <option value="water">Water & Sanitation</option>
+            <option value="electricity">Electricity & Power</option>
+            <option value="health">Public Health</option>
+            <option value="education">Education</option>
+            <option value="transport">Public Transport</option>
+            <option value="environment">Environment</option>
+            <option value="housing">Housing & Urban Dev</option>
+            <option value="law">Law & Order</option>
+            <option value="revenue">Revenue & Taxation</option>
+            <option value="social">Social Welfare</option>
+            <option value="agriculture">Agriculture</option>
+          </select>
+          <div class="ai-suggestion">
+            <span class="ai-badge">AI</span>
+            <span style="color:var(--text-secondary);">Our AI will analyze your description and suggest the most relevant department automatically.</span>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" style="flex:1;">✦ Submit Complaint</button>
+          <button type="reset" class="btn btn-outline" style="flex:0.5;">Clear</button>
+        </div>
+      </form>
+      <div id="formSuccess" style="display:none;text-align:center;padding:2rem;">
+        <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
+        <h3 style="font-family:var(--font-heading);margin-bottom:0.75rem;">Complaint Submitted!</h3>
+        <p style="color:var(--text-secondary);font-size:0.9rem;">Your complaint has been received and is being processed by our AI system. You will receive updates via email.</p>
+        <p style="margin-top:1rem;"><span class="badge badge-progress">Tracking ID: GC-2025-00847</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DASHBOARDS PREVIEW -->
+<section class="section" id="dashboards">
+  <div class="section-inner">
+    <span class="section-badge">Dashboard Preview</span>
+    <h2 class="section-title">Minister Dashboard</h2>
+    <p class="section-subtitle">Ministers can review, assign, and track all complaints in their department.</p>
+    <div class="dashboard-header">
+      <div><span class="badge badge-progress" style="margin-right:0.5rem;">12 Active</span><span class="badge badge-pending">5 Pending</span></div>
+      <div class="filter-bar">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">Pending</button>
+        <button class="filter-btn">In Progress</button>
+        <button class="filter-btn">Resolved</button>
+      </div>
+    </div>
+
+    <!-- Sample complaint cards -->
+    <div class="complaint-card">
+      <div class="complaint-header">
+        <div>
+          <div class="complaint-id">GC-2025-00841</div>
+          <div class="complaint-title">Pothole causing accidents on Main Street</div>
+        </div>
+        <span class="badge badge-urgent">🔴 URGENT</span>
+      </div>
+      <div class="complaint-desc">Large pothole near the intersection of Main St and 5th Ave has caused multiple minor accidents. Residents have been complaining for weeks with no action taken.</div>
+      <div class="complaint-meta">
+        <span class="badge badge-pending">Pending</span>
+        <span style="font-size:0.8rem;color:var(--text-muted);">📍 Roads & Infrastructure</span>
+        <span style="font-size:0.8rem;color:var(--text-muted);">📅 2025-04-20</span>
+        <span style="font-size:0.8rem;color:var(--text-muted);">👍 24 votes</span>
+      </div>
+      <div class="complaint-actions">
+        <button class="btn-sm">Assign Agent</button>
+        <button class="btn-sm">View Details</button>
+        <button class="btn-sm">Mark In Progress</button>
+      </div>
+    </div>
+
+    <div class="complaint-card">
+      <div class="complaint-header">
+        <div>
+          <div class="complaint-id">GC-2025-00839</div>
+          <div class="complaint-title">Water supply disruption in Sector 7</div>
+        </div>
+        <span class="badge badge-progress">IN PROGRESS</span>
+      </div>
+      <div class="complaint-desc">Residents of Sector 7 have been without water supply for 3 days. The municipality has not provided any updates or timeline for restoration.</div>
+      <div class="complaint-meta">
+        <span class="badge badge-progress">In Progress</span>
+        <span style="font-size:0.8rem;color:var(--text-muted);">📍 Water & Sanitation</span>
+        <span style="font-size:0.8rem;color:var(--text-muted);">📅 2025-04-18</span>
+        <span style="font-size:0.8rem;color:var(--text-muted);">👤 Agent: R. Kumar</span>
+      </div>
+      <div class="complaint-actions">
+        <button class="btn-sm">View Details</button>
+        <button class="btn-sm">Mark Resolved</button>
+      </div>
+    </div>
+
+    <div class="complaint-card">
+      <div class="complaint-header">
+        <div>
+          <div class="complaint-id">GC-2025-00835</div>
+          <div class="complaint-title">Streetlights not working on Park Avenue</div>
+        </div>
+        <span class="badge badge-resolved">✅ RESOLVED</span>
+      </div>
+      <div class="complaint-desc">Multiple streetlights on Park Avenue between blocks 12-18 were non-functional. Issue has been resolved by the electricity department.</div>
+      <div class="complaint-meta">
+        <span class="badge badge-resolved">Resolved</span>
+        <span style="font-size:0.8rem;color:var(--text-muted);">📍 Electricity & Power</span>
+        <span style="font-size:0.8rem;color:var(--text-muted);">📅 2025-04-15</span>
+        <span style="font-size:0.8rem;color:var(--text-muted);">👤 Agent: S. Patel</span>
+      </div>
+      <div class="complaint-actions">
+        <button class="btn-sm">View Details</button>
+      </div>
+    </div>
+
+    <!-- Agent Dashboard Preview -->
+    <h2 class="section-title" style="margin-top:4rem;">Agent Dashboard</h2>
+    <p class="section-subtitle">Agents can view assigned complaints, update statuses, and track urgency indicators.</p>
+
+    <div class="stats-row" style="margin-top:1.5rem;margin-bottom:2rem;">
+      <div class="stat-card"><div class="stat-number" style="color:var(--amber);">3</div><div class="stat-label">Pending Tasks</div></div>
+      <div class="stat-card"><div class="stat-number" style="color:var(--cyan);">5</div><div class="stat-label">In Progress</div></div>
+      <div class="stat-card"><div class="stat-number" style="color:var(--green);">28</div><div class="stat-label">Resolved This Month</div></div>
+      <div class="stat-card"><div class="stat-number" style="color:var(--red);">1</div><div class="stat-label">Urgent</div></div>
+    </div>
+
+    <div class="complaint-card">
+      <div class="complaint-header">
+        <div>
+          <div class="complaint-id">ASSIGNED TO YOU</div>
+          <div class="complaint-title">Garbage not collected in Zone B for 5 days</div>
+        </div>
+        <span class="badge badge-urgent">🔴 HIGH PRIORITY</span>
+      </div>
+      <div class="complaint-desc">Residents of Zone B residential area report that garbage has not been collected for 5 consecutive days, causing health hazards.</div>
+      <div class="complaint-meta">
+        <span class="badge badge-pending">Pending Action</span>
+        <span style="font-size:0.8rem;color:var(--text-muted);">📍 Environment</span>
+        <span style="font-size:0.8rem;color:var(--text-muted);">👍 42 votes</span>
+      </div>
+      <div class="complaint-actions">
+        <button class="btn-sm">Start Working</button>
+        <button class="btn-sm">Mark Resolved</button>
+        <button class="btn-sm">Request Info</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section form-section" id="contact">
+  <div class="section-inner" style="text-align:center;">
+    <span class="section-badge">Get in Touch</span>
+    <h2 class="section-title" style="text-align:center;">Contact Us</h2>
+    <p class="section-subtitle center">Have questions about GovConnect? Reach out to our team.</p>
+    <div class="contact-grid" style="text-align:left;">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div><h4>Email</h4><p>support@govconnect.gov</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div><h4>Phone</h4><p>+94760055234</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div><h4>Address</h4><p>Ministry of Digital Services<br>Colombo 07, Sri Lanka</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div><h4>Working Hours</h4><p>Mon – Fri, 8:30 AM – 5:00 PM</p></div>
+        </div>
+      </div>
+      <div class="form-wrapper" style="margin:0;">
+        <form onsubmit="event.preventDefault();alert('Message sent! We will get back to you soon.');">
+          <div class="form-group">
+            <label for="contactName">Your Name</label>
+            <input type="text" id="contactName" class="form-control" placeholder="Full name" required>
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" class="form-control" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="contactMsg">Message</label>
+            <textarea id="contactMsg" class="form-control" placeholder="Your message..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">GovConnect</div>
+    <div class="footer-text">© 2025 GovConnect — AI-Powered Citizen Complaint Management Platform</div>
+    <ul class="footer-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#submit">Submit</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+// Hamburger menu
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+// Close nav on link click (mobile)
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+// Active nav link on scroll
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY + 100;
+  sections.forEach(sec => {
+    const top = sec.offsetTop - 100;
+    const bottom = top + sec.offsetHeight;
+    const id = sec.getAttribute('id');
+    const link = document.querySelector(`.nav-links a[href="#${id}"]`);
+    if (link) {
+      if (scrollY >= top && scrollY < bottom) link.classList.add('active');
+      else link.classList.remove('active');
+    }
+  });
+});
+
+// Form submission
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('complaintForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+
+// Filter buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.parentElement.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// Particle background
+(function() {
+  const canvas = document.getElementById('particles-canvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  const COUNT = 60;
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  for (let i = 0; i < COUNT; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      r: Math.random() * 1.5 + 0.5
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach((p, i) => {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0) p.x = canvas.width;
+      if (p.x > canvas.width) p.x = 0;
+      if (p.y < 0) p.y = canvas.height;
+      if (p.y > canvas.height) p.y = 0;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(212,168,67,0.25)';
+      ctx.fill();
+
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = p.x - particles[j].x;
+        const dy = p.y - particles[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 150) {
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(212,168,67,${0.06 * (1 - dist/150)})`;
+          ctx.stroke();
+        }
+      }
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.style.opacity = '1';
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
